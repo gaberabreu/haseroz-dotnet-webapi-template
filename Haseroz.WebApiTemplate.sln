@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{809629D1-56BC-4500-97C6-B3393873FBEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5FF34D8C-09A0-4540-808F-5A16C4316912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.Api", "src\Haseroz.WebApiTemplate.Api\Haseroz.WebApiTemplate.Api.csproj", "{DC2FC529-27DF-495B-96B0-3CD5D9FDD299}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.UnitTests", "tests\Haseroz.WebApiTemplate.UnitTests\Haseroz.WebApiTemplate.UnitTests.csproj", "{9001190C-01BD-41D2-91F2-B2A0525342C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC2FC529-27DF-495B-96B0-3CD5D9FDD299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2FC529-27DF-495B-96B0-3CD5D9FDD299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2FC529-27DF-495B-96B0-3CD5D9FDD299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2FC529-27DF-495B-96B0-3CD5D9FDD299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC2FC529-27DF-495B-96B0-3CD5D9FDD299} = {809629D1-56BC-4500-97C6-B3393873FBEB}
+		{9001190C-01BD-41D2-91F2-B2A0525342C4} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
+	EndGlobalSection
+EndGlobal
