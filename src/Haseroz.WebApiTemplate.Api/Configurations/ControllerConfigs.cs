@@ -1,11 +1,13 @@
 ﻿using Asp.Versioning;
+using Haseroz.WebApiTemplate.Api.Configurations;
+using Haseroz.WebApiTemplate.Api.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Haseroz.WebApiTemplate.Api.Extensions;
+namespace Haseroz.WebApiTemplate.Api.Configurations;
 
-internal static class ControllerExtensions
+internal static class ControllerConfigs
 {
-    internal static IServiceCollection AddControllers(this IServiceCollection services)
+    internal static IServiceCollection AddControllerConfigs(this IServiceCollection services)
     {
         services
             .AddEndpointsApiExplorer()
@@ -15,7 +17,7 @@ internal static class ControllerExtensions
             {
                 options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseTransformer()));
             });
-        
+
         return services;
     }
 
@@ -38,13 +40,11 @@ internal static class ControllerExtensions
 
     private static IServiceCollection AddNamingConventions(this IServiceCollection services)
     {
-        services.Configure<RouteOptions>(options =>
+        return services.Configure<RouteOptions>(options =>
         {
             options.LowercaseQueryStrings = true;
             options.LowercaseUrls = true;
             options.ConstraintMap["transform-to-kebab"] = typeof(KebabCaseTransformer);
         });
-
-        return services;
     }
 }

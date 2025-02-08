@@ -1,44 +1,31 @@
-using Haseroz.WebApiTemplate.Api.Docs;
-using Haseroz.WebApiTemplate.Api.Extensions;
-using Serilog;
-
-Log.Logger = new LoggerConfiguration()
-    .WithDefaults()
-    .CreateLogger();
+using Haseroz.WebApiTemplate.Api.Configurations;
+using Haseroz.WebApiTemplate.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseSerilogWithDefaults();
+builder.Host.AddSerilogConfigs();
 
-builder.Services.AddDependencies();
+builder.Services
+    .AddControllerConfigs()
+    .AddAuthenticationConfigs(builder.Configuration)
+    .AddAuthorizationConfigs()
+    .AddSwaggerConfigs()
+    .AddHealthChecksConfigs()
+    .AddExceptionHandler<GlobalExceptionHandler>();
 
-try
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
 {
-    var app = builder.Build();
-
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-    }
-
-    app
-        .UseHealthChecks()
-        .UseSerilogRequestLogging()
-        .UseRouting()
-        .UseExceptionHandler(_ => { })
-        .UseAuthentication()
-        .UseAuthorization()
-        .UseEndpoints(options => options.MapControllers());
-
-    Log.Information("Starting web application");
-
-    await app.RunAsync();
-}
-catch (Exception ex)
-{
-    Log.Fatal(ex, "Application terminated unexpectedly");
-}
-finally
-{
-    Log.CloseAndFlush();
+    app.UseSwaggerConfigs();
 }
 
+app
+    .UseHealthChecksConfigs()
+    .UseSerilogRequestLoggingConfigs()
+    .UseRouting()
+    .UseExceptionHandler(_ => { })
+    .UseAuthentication()
+    .UseAuthorization()
+    .UseEndpoints(options => options.MapControllers());
+
+await app.RunAsync();
