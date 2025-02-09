@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Gabriel Abreu",
+  "classifications": ["WebApi", "Web", "REST", "C#"],
+  "identity": "Haseroz.WebApiTemplate",
+  "name": "Haseroz Web API Template",
+  "shortName": "haseroz-webapi",
+  "sourceName": "Haseroz.WebApiTemplate",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}
