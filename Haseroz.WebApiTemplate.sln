@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{809629D1-56BC-4500-97C6-B3393873FBEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5FF34D8C-09A0-4540-808F-5A16C4316912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.UnitTests", "tests\Haseroz.WebApiTemplate.UnitTests\Haseroz.WebApiTemplate.UnitTests.csproj", "{9001190C-01BD-41D2-91F2-B2A0525342C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.IntegrationTests", "tests\Haseroz.WebApiTemplate.IntegrationTests\Haseroz.WebApiTemplate.IntegrationTests.csproj", "{FF757FF8-E7B3-47C9-B484-510845C5ABB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.Web", "src\Haseroz.WebApiTemplate.Web\Haseroz.WebApiTemplate.Web.csproj", "{4A9187E8-932F-4CA5-872B-823C6F723CCE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{07F708CD-2233-4F0D-A997-745582B5976F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9001190C-01BD-41D2-91F2-B2A0525342C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF757FF8-E7B3-47C9-B484-510845C5ABB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF757FF8-E7B3-47C9-B484-510845C5ABB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF757FF8-E7B3-47C9-B484-510845C5ABB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF757FF8-E7B3-47C9-B484-510845C5ABB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9001190C-01BD-41D2-91F2-B2A0525342C4} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
+		{FF757FF8-E7B3-47C9-B484-510845C5ABB9} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
+		{4A9187E8-932F-4CA5-872B-823C6F723CCE} = {809629D1-56BC-4500-97C6-B3393873FBEB}
+	EndGlobalSection
+EndGlobal
