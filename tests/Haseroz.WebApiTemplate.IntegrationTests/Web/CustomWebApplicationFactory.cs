@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web;
 
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {

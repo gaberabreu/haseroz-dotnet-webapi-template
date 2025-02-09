@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Xunit.Abstractions;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web;
 
 public static class TestOutputHelperExtensionMethods
 {

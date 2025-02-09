@@ -1,6 +1,6 @@
 ﻿using Xunit.Abstractions;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web;
 
 public static partial class HttpClientExtensionMethods
 {

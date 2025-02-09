@@ -1,5 +1,6 @@
 using Haseroz.WebApiTemplate.Web.Docs;
 using Haseroz.WebApiTemplate.Web.Extensions;
+using Haseroz.WebApiTemplate.Web.HealthCheck;
 using Haseroz.WebApiTemplate.Web.Identity;
 using Haseroz.WebApiTemplate.Web.Services;
 

@@ -1,7 +1,7 @@
-﻿using Haseroz.WebApiTemplate.Web.Models;
+﻿using Haseroz.WebApiTemplate.Web.HealthCheck;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace Haseroz.WebApiTemplate.UnitTests.Web.Models;
+namespace Haseroz.WebApiTemplate.UnitTests.Web.HealthCheck;
 
 public class HealthCheckResponseTests
 {

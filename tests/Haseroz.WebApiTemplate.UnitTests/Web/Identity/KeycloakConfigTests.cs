@@ -15,6 +15,7 @@ public class KeycloakConfigTests
         var authority = "http://localhost:18080/realms/realm-test";
         var authorizationUrl = "http://localhost:18080/realms/realm-test/protocol/openid-connect/auth";
         var tokenUrl = "http://localhost:18080/realms/realm-test/protocol/openid-connect/token";
+        var wellKnownUrl = "http://localhost:18080/realms/realm-test/.well-known/openid-configuration";
 
         // Act
         var keycloakConfig = new KeycloakConfig
@@ -33,5 +34,6 @@ public class KeycloakConfigTests
         Assert.Equal(authority, keycloakConfig.Authority);
         Assert.Equal(authorizationUrl, keycloakConfig.AuthorizationUrl);
         Assert.Equal(tokenUrl, keycloakConfig.TokenUrl);
+        Assert.Equal(wellKnownUrl, keycloakConfig.WellKnownUrl);
     }
 }

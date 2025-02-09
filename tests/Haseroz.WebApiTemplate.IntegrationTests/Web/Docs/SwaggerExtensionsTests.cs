@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using Xunit.Abstractions;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests.Docs;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web.Docs;
 
 public class SwaggerExtensionsTests(CustomWebApplicationFactory factory, ITestOutputHelper output) : IClassFixture<CustomWebApplicationFactory>
 {
@@ -18,7 +18,7 @@ public class SwaggerExtensionsTests(CustomWebApplicationFactory factory, ITestOu
     {
         // Act
         var response = await _client.ExecuteGetAsync("swagger", output);
-        
+
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }

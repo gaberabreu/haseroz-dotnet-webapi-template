@@ -12,6 +12,7 @@ internal static class ControllerExtensions
             .AddEndpointsApiExplorer()
             .AddApiVersioning()
             .AddNamingConventions()
+            .AddHttpClient()
             .AddControllers(options =>
             {
                 options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseTransformer()));

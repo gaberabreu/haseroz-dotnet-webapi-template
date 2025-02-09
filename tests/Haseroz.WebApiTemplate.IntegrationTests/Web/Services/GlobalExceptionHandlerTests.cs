@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Xunit.Abstractions;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests.Services;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web.Services;
 
 public class GlobalExceptionHandlerTests(CustomWebApplicationFactory factory, ITestOutputHelper output) : IClassFixture<CustomWebApplicationFactory>
 {

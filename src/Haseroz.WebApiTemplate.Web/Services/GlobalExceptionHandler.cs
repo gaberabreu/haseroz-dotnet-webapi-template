@@ -1,4 +1,5 @@
-﻿using Haseroz.WebApiTemplate.Web.Models;
+﻿using System.Net.Mime;
+using Haseroz.WebApiTemplate.Web.Models;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace Haseroz.WebApiTemplate.Web.Services;
@@ -9,7 +10,7 @@ internal class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : 
     {
         logger.LogError(exception, "An unexpected error ocurred while processing the request: '{exceptionMessage}'", exception.Message);
 
-        httpContext.Response.ContentType = "application/json";
+        httpContext.Response.ContentType = MediaTypeNames.Application.Json;
         httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
         var response = ErrorResponse.FromContext(httpContext).WithError(new()

@@ -1,9 +1,9 @@
 ﻿using System.Net;
-using Haseroz.WebApiTemplate.Web.Models;
+using Haseroz.WebApiTemplate.Web.HealthCheck;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Xunit.Abstractions;
 
-namespace Haseroz.WebApiTemplate.IntegrationTests.Extensions;
+namespace Haseroz.WebApiTemplate.IntegrationTests.Web.HealthCheck;
 
 public class HealthCheckExtensionsTests(CustomWebApplicationFactory factory, ITestOutputHelper output) : IClassFixture<CustomWebApplicationFactory>
 {
@@ -13,7 +13,7 @@ public class HealthCheckExtensionsTests(CustomWebApplicationFactory factory, ITe
     public async Task GIVEN_HealthCheckIsConfigured_WHEN_EndpointCalled_THEN_ReturnOK()
     {
         // Act
-        var response = await _client.ExecuteGetAsync("api/health", output);
+        var response = await _client.ExecuteGetAsync("api/health/liveness", output);
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);

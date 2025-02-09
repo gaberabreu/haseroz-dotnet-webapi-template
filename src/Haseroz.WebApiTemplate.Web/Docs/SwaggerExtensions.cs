@@ -16,6 +16,7 @@ internal static class SwaggerExtensions
             .AddSwaggerGen(options =>
             {
                 options.IncludeXmlComments();
+                options.DocumentFilter<HealthCheckSwaggerFilter>();
             })
             .AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureApiDescription>()
             .AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureKeycloakAuthentication>();
