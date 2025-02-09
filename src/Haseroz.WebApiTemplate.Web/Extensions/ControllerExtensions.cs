@@ -1,6 +1,5 @@
 ﻿using Asp.Versioning;
 using Haseroz.WebApiTemplate.Web.Extensions;
-using Haseroz.WebApiTemplate.Web.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace Haseroz.WebApiTemplate.Web.Extensions;

@@ -30,9 +30,9 @@ internal static class SwaggerExtensions
             .UseSwagger()
             .UseSwaggerUI(options =>
             {
-                foreach (var description in provider.ApiVersionDescriptions)
+                foreach (var groupName in provider.ApiVersionDescriptions.Select(d => d.GroupName))
                 {
-                    options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpper());
+                    options.SwaggerEndpoint($"/swagger/{groupName}/swagger.json", groupName.ToUpper());
                 }
 
                 options.OAuthClientId(keycloakConfigs.Value.ClientId);

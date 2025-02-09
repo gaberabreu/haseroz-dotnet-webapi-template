@@ -27,7 +27,6 @@ internal static class HealthCheckExtensions
         return app
             .UseHealthChecks("/api/health", new HealthCheckOptions
             {
-                Predicate = _ => false,
                 ResponseWriter = HealthCheckResponseWriter()
             });
     }

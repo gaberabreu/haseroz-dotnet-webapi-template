@@ -35,34 +35,31 @@ internal static class AuthenticationExtensions
 
                 options.Events = new JwtBearerEvents
                 {
-                    OnTokenValidated = context =>
-                    {
-                        var user = context.Principal;
-                        var identity = user!.Identity as ClaimsIdentity;
-
-                        var resourceAccess = user.FindFirst(ResourceAccess)?.Value;
-
-                        if (!string.IsNullOrEmpty(resourceAccess))
-                        {
-                            using var doc = JsonDocument.Parse(resourceAccess);
-
-                            if (doc.RootElement.TryGetProperty(config.ClientId, out var webApiTemplate))
-                            {
-                                if (webApiTemplate.TryGetProperty(Roles, out var roles))
-                                {
-                                    foreach (var role in roles.EnumerateArray())
-                                    {
-                                        identity!.AddClaim(new Claim(ClaimTypes.Role, role.GetString()!));
-                                    }
-                                }
-                            }
-                        }
-
-                        return Task.CompletedTask;
-                    }
+                    OnTokenValidated = context => ProcessRolesFromToken(context, config.ClientId)
                 };
             });
 
         return services;
+    }
+
+    private static Task ProcessRolesFromToken(TokenValidatedContext context, string clientId)
+    {
+        var user = context.Principal;
+        var resourceAccess = user?.FindFirst(ResourceAccess)?.Value;
+
+        if (user?.Identity is not ClaimsIdentity identity || string.IsNullOrEmpty(resourceAccess))
+            return Task.CompletedTask;
+
+        using var doc = JsonDocument.Parse(resourceAccess);
+
+        if (doc.RootElement.TryGetProperty(clientId, out var clientResource) && clientResource.TryGetProperty(Roles, out var roles))
+        {
+            foreach (var role in roles.EnumerateArray())
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, role.GetString()!));
+            }
+        }
+
+        return Task.CompletedTask;
     }
 }

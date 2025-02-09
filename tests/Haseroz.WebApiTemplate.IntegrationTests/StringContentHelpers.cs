@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.Mime;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -15,7 +16,7 @@ public static class StringContentHelpers
 
     public static StringContent FromModelToJson(this object model)
     {
-        return new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
+        return new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, MediaTypeNames.Application.Json);
     }
 
     public static T? FromJsonToModel<T>(this string json)

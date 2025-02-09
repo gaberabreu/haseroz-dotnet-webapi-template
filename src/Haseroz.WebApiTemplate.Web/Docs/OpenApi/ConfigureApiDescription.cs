@@ -16,9 +16,9 @@ internal class ConfigureApiDescription(IApiVersionDescriptionProvider provider) 
         {
             var info = new OpenApiInfo()
             {
-                Title = assembly.GetCustomAttribute<AssemblyTitleAttribute>()?.Title,
+                Title = assembly.GetCustomAttribute<AssemblyTitleAttribute>()!.Title,
                 Version = description.ApiVersion.ToString(),
-                Description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description,
+                Description = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>()!.Description,
             };
 
             options.SwaggerDoc(description.GroupName, info);
