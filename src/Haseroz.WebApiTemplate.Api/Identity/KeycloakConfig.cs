@@ -1,4 +1,4 @@
-﻿namespace Haseroz.WebApiTemplate.Api.Services;
+﻿namespace Haseroz.WebApiTemplate.Api.Identity;
 
 internal class KeycloakConfig
 {

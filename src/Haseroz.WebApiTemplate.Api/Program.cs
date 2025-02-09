@@ -1,4 +1,6 @@
-using Haseroz.WebApiTemplate.Api.Configurations;
+using Haseroz.WebApiTemplate.Api.Docs;
+using Haseroz.WebApiTemplate.Api.Extensions;
+using Haseroz.WebApiTemplate.Api.Identity;
 using Haseroz.WebApiTemplate.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -5,9 +5,9 @@ using Serilog.Exceptions.Core;
 using Serilog.Exceptions.EntityFrameworkCore.Destructurers;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Haseroz.WebApiTemplate.Api.Configurations;
+namespace Haseroz.WebApiTemplate.Api.Extensions;
 
-internal static class LoggerConfigs
+internal static class LoggingExtensions
 {
     private const string LogTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] [{SourceContext}] {Message:lj}{NewLine}{Exception}";
 

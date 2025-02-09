@@ -1,6 +1,6 @@
-﻿namespace Haseroz.WebApiTemplate.Api.Configurations;
+﻿namespace Haseroz.WebApiTemplate.Api.Identity;
 
-internal static class AuthorizationConfigs
+internal static class AuthorizationExtensions
 {
     internal static IServiceCollection AddAuthorizationConfigs(this IServiceCollection services)
     {

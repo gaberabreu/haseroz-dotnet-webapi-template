@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
 using Asp.Versioning.ApiExplorer;
-using Haseroz.WebApiTemplate.Api.Configurations;
 using Haseroz.WebApiTemplate.Api.Docs;
-using Haseroz.WebApiTemplate.Api.Services;
+using Haseroz.WebApiTemplate.Api.Docs.OpenApi;
+using Haseroz.WebApiTemplate.Api.Identity;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Haseroz.WebApiTemplate.Api.Configurations;
+namespace Haseroz.WebApiTemplate.Api.Docs;
 
-internal static class SwaggerConfigs
+internal static class SwaggerExtensions
 {
     internal static IServiceCollection AddSwaggerConfigs(this IServiceCollection services)
     {

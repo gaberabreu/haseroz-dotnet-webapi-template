@@ -1,6 +1,6 @@
-﻿namespace Haseroz.WebApiTemplate.Api.Configurations;
+﻿namespace Haseroz.WebApiTemplate.Api.Extensions;
 
-internal static class HealthCheckConfigs
+internal static class HealthCheckExtensions
 {
     internal static IServiceCollection AddHealthChecksConfigs(this IServiceCollection services)
     {

@@ -1,18 +1,17 @@
 ﻿using System.Security.Claims;
 using System.Text.Json;
-using Haseroz.WebApiTemplate.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Haseroz.WebApiTemplate.Api.Configurations;
+namespace Haseroz.WebApiTemplate.Api.Identity;
 
-internal static class AuthenticationConfigs
+internal static class AuthenticationExtensions
 {
     private const string ConfigKey = "KeycloakConfig";
     private const string ResourceAccess = "resource_access";
     private const string Roles = "roles";
 
-    internal static IServiceCollection AddAuthenticationConfigs(this IServiceCollection services, IConfiguration configuration) 
+    internal static IServiceCollection AddAuthenticationConfigs(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<KeycloakConfig>(configuration.GetSection(ConfigKey));
 

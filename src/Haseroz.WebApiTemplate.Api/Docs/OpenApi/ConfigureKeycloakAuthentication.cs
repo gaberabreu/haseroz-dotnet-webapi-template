@@ -1,9 +1,9 @@
-﻿using Haseroz.WebApiTemplate.Api.Services;
+﻿using Haseroz.WebApiTemplate.Api.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Haseroz.WebApiTemplate.Api.Docs;
+namespace Haseroz.WebApiTemplate.Api.Docs.OpenApi;
 
 internal class ConfigureKeycloakAuthentication(IOptions<KeycloakConfig> keycloakConfig) : IConfigureOptions<SwaggerGenOptions>
 {

@@ -1,11 +1,10 @@
 ﻿using Asp.Versioning;
-using Haseroz.WebApiTemplate.Api.Configurations;
 using Haseroz.WebApiTemplate.Api.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Haseroz.WebApiTemplate.Api.Configurations;
+namespace Haseroz.WebApiTemplate.Api.Extensions;
 
-internal static class ControllerConfigs
+internal static class ControllerExtensions
 {
     internal static IServiceCollection AddControllerConfigs(this IServiceCollection services)
     {
