@@ -8,6 +8,7 @@
 		<AssemblyTitle>Haseroz.WebApiTemplate.Web.Title</AssemblyTitle>
 		<Description>Haseroz.WebApiTemplate.Web.Description</Description>
 		<NoWarn>$(NoWarn);1591</NoWarn>
+		<UserSecretsId>44cd3a08-b501-4e08-8f95-7b92ca14edc7</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
