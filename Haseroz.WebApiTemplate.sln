@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.Web", "src\Haseroz.WebApiTemplate.Web\Haseroz.WebApiTemplate.Web.csproj", "{4A9187E8-932F-4CA5-872B-823C6F723CCE}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{07F708CD-2233-4F0D-A997-745582B5976F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A9187E8-932F-4CA5-872B-823C6F723CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

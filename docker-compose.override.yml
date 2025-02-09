@@ -1,0 +1,25 @@
+services:
+  haseroz.webapitemplate.web:
+    container_name: Haseroz.WebApiTemplate.Web
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - KEYCLOAKCONFIG__AUTHSERVERURL=http://192.168.0.56:18080 
+      - KEYCLOAKCONFIG__REALM=haseroz
+      - KEYCLOAKCONFIG__CLIENTID=web-api-template
+    ports:
+      - "5001:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+  keycloak:
+    container_name: Keycloak
+    environment:
+      - KC_HEALTH_ENABLED=true
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - "18080:8080"
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+volumes:
+  keycloak_data:
