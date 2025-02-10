@@ -4,9 +4,9 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - KEYCLOAKCONFIG__AUTHSERVERURL=http://192.168.0.56:18080 
-      - KEYCLOAKCONFIG__REALM=haseroz
-      - KEYCLOAKCONFIG__CLIENTID=web-api-template
+      - KEYCLOAK__AUTHSERVERURL=http://192.168.0.56:18080 
+      - KEYCLOAK__REALM=haseroz
+      - KEYCLOAK__CLIENTID=web-api-template
     ports:
       - "5001:8080"
     volumes:

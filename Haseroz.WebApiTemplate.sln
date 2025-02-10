@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.template.config\template.json = .template.config\template.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haseroz.WebApiTemplate.FunctionalTests", "tests\Haseroz.WebApiTemplate.FunctionalTests\Haseroz.WebApiTemplate.FunctionalTests.csproj", "{7451F1B8-E6D5-426B-88B9-94A7667EBF81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{07F708CD-2233-4F0D-A997-745582B5976F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07F708CD-2233-4F0D-A997-745582B5976F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7451F1B8-E6D5-426B-88B9-94A7667EBF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7451F1B8-E6D5-426B-88B9-94A7667EBF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7451F1B8-E6D5-426B-88B9-94A7667EBF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7451F1B8-E6D5-426B-88B9-94A7667EBF81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{9001190C-01BD-41D2-91F2-B2A0525342C4} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
 		{FF757FF8-E7B3-47C9-B484-510845C5ABB9} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
 		{4A9187E8-932F-4CA5-872B-823C6F723CCE} = {809629D1-56BC-4500-97C6-B3393873FBEB}
+		{7451F1B8-E6D5-426B-88B9-94A7667EBF81} = {5FF34D8C-09A0-4540-808F-5A16C4316912}
 	EndGlobalSection
 EndGlobal

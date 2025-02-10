@@ -20,7 +20,7 @@ public class FreeAccessControllerTests
     }
 
     [Fact]
-    public async Task GIVEN_RequestToFreeAccessEndpoint_WHEN_GetIsCalled_THEN_ReturnsNoContent()
+    public async Task Given_RequestToFreeAccessEndpoint_When_GetIsCalled_Then_ReturnsNoContent()
     {
         // Act
         var result = await _controller.Get();
