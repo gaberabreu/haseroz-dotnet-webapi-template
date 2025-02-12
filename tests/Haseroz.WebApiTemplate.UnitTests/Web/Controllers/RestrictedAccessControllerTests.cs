@@ -20,7 +20,7 @@ public class RestrictedAccessControllerTests
     }
 
     [Fact]
-    public async Task GIVEN_RequestToEndpoint_WHEN_DefaultIsCalled_THEN_ReturnsNoContent()
+    public async Task Given_RequestToEndpoint_When_DefaultIsCalled_Then_ReturnsNoContent()
     {
         // Act
         var result = await _controller.Default();
@@ -30,7 +30,7 @@ public class RestrictedAccessControllerTests
     }
 
     [Fact]
-    public async Task GIVEN_RequestToEndpoint_WHEN_ReaderIsCalled_THEN_ReturnsNoContent()
+    public async Task Given_RequestToEndpoint_When_ReaderIsCalled_Then_ReturnsNoContent()
     {
         // Act
         var result = await _controller.Reader();
@@ -40,7 +40,7 @@ public class RestrictedAccessControllerTests
     }
 
     [Fact]
-    public async Task GIVEN_RequestToEndpoint_WHEN_WriterIsCalled_THEN_ReturnsNoContent()
+    public async Task Given_RequestToEndpoint_When_WriterIsCalled_Then_ReturnsNoContent()
     {
         // Act
         var result = await _controller.Writer();
@@ -50,7 +50,7 @@ public class RestrictedAccessControllerTests
     }
 
     [Fact]
-    public async Task GIVEN_RequestToEndpoint_WHEN_ReaderOrWriterIsCalled_THEN_ReturnsNoContent()
+    public async Task Given_RequestToEndpoint_When_ReaderOrWriterIsCalled_Then_ReturnsNoContent()
     {
         // Act
         var result = await _controller.ReaderOrWriter();

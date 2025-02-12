@@ -7,7 +7,7 @@ namespace Haseroz.WebApiTemplate.Web.Controllers;
 /// Controller that requires authentication.
 /// </summary>
 [ApiController]
-[Route("v{version:apiVersion}/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [Authorize]
 public class RestrictedAccessController : ControllerBase
 {

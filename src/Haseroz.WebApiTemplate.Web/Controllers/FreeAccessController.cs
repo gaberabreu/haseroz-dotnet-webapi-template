@@ -6,7 +6,7 @@ namespace Haseroz.WebApiTemplate.Web.Controllers;
 /// Controller with free access, no authentication required.
 /// </summary>
 [ApiController]
-[Route("v{version:apiVersion}/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class FreeAccessController : ControllerBase
 {
     /// <summary>
