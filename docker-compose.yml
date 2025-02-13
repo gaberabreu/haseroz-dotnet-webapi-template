@@ -1,9 +1,9 @@
 services:
-  haseroz.webapitemplate.web:
-    image: ${DOCKER_REGISTRY-}haserozwebapitemplateweb
+  net.webapi.skeleton.web:
+    image: ${DOCKER_REGISTRY-}net.webapi.skeleton.web
     build:
       context: .
-      dockerfile: src/Haseroz.WebApiTemplate.Web/Dockerfile
+      dockerfile: src/Net.WebApi.Skeleton.Web/Dockerfile
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     command: start-dev
