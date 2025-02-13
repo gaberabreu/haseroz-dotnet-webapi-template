@@ -1,11 +1,11 @@
 {
-    "profiles": {
-        "Docker Compose": {
-            "commandName": "DockerCompose",
-            "commandVersion": "1.0",
-            "serviceActions": {
-                "haseroz.webapitemplate.web": "StartDebugging"
-            }
-        }
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "net.webapi.skeleton.web": "StartDebugging"
+      }
     }
+  }
 }

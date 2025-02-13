@@ -1,12 +1,12 @@
 services:
-  haseroz.webapitemplate.web:
-    container_name: Haseroz.WebApiTemplate.Web
+  net.webapi.skeleton.web:
+    container_name: Net.WebApi.Skeleton.Web
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - KEYCLOAK__AUTHSERVERURL=http://192.168.0.56:18080 
-      - KEYCLOAK__REALM=haseroz
-      - KEYCLOAK__CLIENTID=web-api-template
+      - KEYCLOAK__AUTHSERVERURL=http://192.168.0.56:18080
+      - KEYCLOAK__REALM=skeleton
+      - KEYCLOAK__CLIENTID=webapi
     ports:
       - "5001:8080"
     volumes:

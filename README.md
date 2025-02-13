@@ -1,1 +1,1 @@
-# haseroz-dotnet-webapi-template
+# dotnet-webapi-skeleton

@@ -7,7 +7,7 @@
     <ProjectGuid>07f708cd-2233-4f0d-a997-745582b5976f</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>haseroz.webapitemplate.web</DockerServiceName>
+    <DockerServiceName>net.webapi.skeleton.web</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
