@@ -12,7 +12,7 @@ public class KeycloakSettingsTests
         var realm = "realm-test";
         var clientId = "client-test";
         var clientSecret = "client-secret-test";
-        var authority = "http://localhost:18080/realms/realm-test";
+        var authority = "http://localhost:18080/realms/realm-test/";
         var authorizationUrl = "http://localhost:18080/realms/realm-test/protocol/openid-connect/auth";
         var tokenUrl = "http://localhost:18080/realms/realm-test/protocol/openid-connect/token";
 
