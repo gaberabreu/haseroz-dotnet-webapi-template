@@ -1,9 +1,0 @@
-services:
-  net.webapi.skeleton.web:
-    image: ${DOCKER_REGISTRY-}net.webapi.skeleton.web
-    build:
-      context: .
-      dockerfile: src/Net.WebApi.Skeleton.Web/Dockerfile
-  keycloak:
-    image: quay.io/keycloak/keycloak:latest
-    command: start-dev

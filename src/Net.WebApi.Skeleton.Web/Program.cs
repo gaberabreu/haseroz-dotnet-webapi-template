@@ -1,22 +1,21 @@
-using Net.WebApi.Skeleton.Web.Configurations;
-using Net.WebApi.Skeleton.Web.Configurations.Controllers;
-using Net.WebApi.Skeleton.Web.Configurations.HealthCheck;
-using Net.WebApi.Skeleton.Web.Configurations.HttpClient;
-using Net.WebApi.Skeleton.Web.Configurations.Logging;
-using Net.WebApi.Skeleton.Web.Configurations.Security;
-using Net.WebApi.Skeleton.Web.Configurations.Swagger;
+using Net.WebApi.Skeleton.Infrastructure;
+using Net.WebApi.Skeleton.Web.Extensions.Controllers;
+using Net.WebApi.Skeleton.Web.Extensions.HealthCheck;
+using Net.WebApi.Skeleton.Web.Extensions.Logging;
+using Net.WebApi.Skeleton.Web.Extensions.Security;
+using Net.WebApi.Skeleton.Web.Extensions.Swagger;
 using Net.WebApi.Skeleton.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.AddLoggerConfigs();
 
 builder.Services.AddControllersConfigs();
-builder.Services.AddHttpClientConfigs();
-builder.Services.AddDependencyInjection();
+builder.Services.AddHttpClient();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddAuthenticationConfigs(builder.Configuration);
 builder.Services.AddAuthorizationConfigs();
 builder.Services.AddSwaggerConfigs();
-builder.Services.AddHealthCheckConfigs();
+builder.Services.AddHealthCheckConfigs(builder.Configuration);
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 var app = builder.Build();
