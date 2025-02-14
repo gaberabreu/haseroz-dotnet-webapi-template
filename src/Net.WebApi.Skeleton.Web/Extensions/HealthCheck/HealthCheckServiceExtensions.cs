@@ -3,7 +3,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Net.WebApi.Skeleton.Web.Extensions.HealthCheck.Checks;
+using Net.WebApi.Skeleton.Infrastructure.Data;
+using Net.WebApi.Skeleton.Web.Extensions.Security;
 using Net.WebApi.Skeleton.Web.Models.HealthCheck;
 
 namespace Net.WebApi.Skeleton.Web.Extensions.HealthCheck;
@@ -17,10 +18,19 @@ public static class HealthCheckServiceExtensions
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
     };
 
-    public static IServiceCollection AddHealthCheckConfigs(this IServiceCollection services)
+    public static IServiceCollection AddHealthCheckConfigs(this IServiceCollection services, IConfiguration configuration)
     {
+        var keycloakSettings = configuration.GetSection(KeycloakSettings.Identifier).Get<KeycloakSettings>()!;
+
         services.AddHealthChecks()
-            .AddCheck<KeycloakCheck>("keycloak");
+            .AddDbContextCheck<AppDbContext>(
+                name: "Database", 
+                tags: ["readiness"],
+                failureStatus: HealthStatus.Unhealthy)
+            .AddUrlGroup(new Uri(keycloakSettings.Authority),
+                name: "Keycloak", 
+                tags: ["readiness"],
+                failureStatus: HealthStatus.Unhealthy);
 
         return services;
     }
@@ -30,12 +40,12 @@ public static class HealthCheckServiceExtensions
         return app
             .UseHealthChecks("/api/v1/health/liveness", new HealthCheckOptions
             {
-                Predicate = check => check.Name == "liveness",
+                Predicate = check => check.Tags.Contains("liveness"),
                 ResponseWriter = HealthCheckResponseWriter()
             })
             .UseHealthChecks("/api/v1/health/readiness", new HealthCheckOptions
             {
-                Predicate = check => check.Name == "keycloak",
+                Predicate = check => check.Tags.Contains("readiness"),
                 ResponseWriter = HealthCheckResponseWriter(true)
             });
     }

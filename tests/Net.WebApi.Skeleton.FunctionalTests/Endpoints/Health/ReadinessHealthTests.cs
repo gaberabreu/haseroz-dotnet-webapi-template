@@ -22,16 +22,14 @@ public class ReadinessHealthTests(FunctionalTestFactory factory, ITestOutputHelp
 
         var content = await response.DeserializeAsync<HealthCheckResponse>();
         Assert.NotNull(content);
-        Assert.Equal(content.Status, HealthStatus.Healthy.ToString());
+        Assert.Equal(HealthStatus.Healthy.ToString(), content.Status);
         Assert.NotNull(content.Dependencies);
-
         Assert.Single(content.Dependencies);
 
         var dependency = content.Dependencies[0];
-        Assert.Equal("keycloak", dependency.Name);
+        Assert.Equal("Database", dependency.Name);
         Assert.Equal(HealthStatus.Healthy.ToString(), dependency.Status);
         Assert.NotEqual(default, dependency.Duration);
-        Assert.Equal("Mocked Keycloak is always healthy.", dependency.Description);
         Assert.Null(dependency.ErrorMessage);
     }
 }

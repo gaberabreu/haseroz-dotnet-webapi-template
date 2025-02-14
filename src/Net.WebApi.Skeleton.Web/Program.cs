@@ -1,3 +1,4 @@
+using Net.WebApi.Skeleton.Infrastructure;
 using Net.WebApi.Skeleton.Web.Extensions.Controllers;
 using Net.WebApi.Skeleton.Web.Extensions.HealthCheck;
 using Net.WebApi.Skeleton.Web.Extensions.Logging;
@@ -10,10 +11,11 @@ builder.Host.AddLoggerConfigs();
 
 builder.Services.AddControllersConfigs();
 builder.Services.AddHttpClient();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddAuthenticationConfigs(builder.Configuration);
 builder.Services.AddAuthorizationConfigs();
 builder.Services.AddSwaggerConfigs();
-builder.Services.AddHealthCheckConfigs();
+builder.Services.AddHealthCheckConfigs(builder.Configuration);
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 var app = builder.Build();

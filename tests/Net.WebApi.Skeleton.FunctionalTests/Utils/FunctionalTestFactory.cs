@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Net.WebApi.Skeleton.FunctionalTests.Utils.Fakes.HealthCheck;
 using Net.WebApi.Skeleton.FunctionalTests.Utils.Fakes.Security;
+using Net.WebApi.Skeleton.Infrastructure.Data;
 
 namespace Net.WebApi.Skeleton.FunctionalTests.Utils;
 
@@ -18,6 +19,7 @@ public class FunctionalTestFactory : WebApplicationFactory<Program>
     {
         builder.ConfigureServices(services =>
         {
+            FakeInfrastructureServices(services);
             FakeHealthCheckServices(services);
             FakeAuthenticationServices(services);
         });
@@ -30,21 +32,22 @@ public class FunctionalTestFactory : WebApplicationFactory<Program>
             options.Registrations.Clear();
         });
 
-        services.AddHealthChecks().AddCheck<FakeKeycloakCheck>("keycloak");
+        services.AddHealthChecks()
+            .AddDbContextCheck<AppDbContext>(
+                name: "Database",
+                tags: ["readiness"],
+                failureStatus: HealthStatus.Unhealthy);
     }
 
     private static void FakeAuthenticationServices(IServiceCollection services)
     {
-        var authDescriptors = services.Where(s => s.ServiceType == typeof(IConfigureOptions<AuthenticationOptions>)).ToList();
+        var authDescriptors = services
+            .Where(s => s.ServiceType == typeof(IConfigureOptions<AuthenticationOptions>))
+            .ToList();
+
         foreach (var descriptor in authDescriptors)
         {
             services.Remove(descriptor);
-        }
-
-        var jwtDescriptor = services.SingleOrDefault(s => s.ServiceType == typeof(JwtBearerOptions));
-        if (jwtDescriptor != null)
-        {
-            services.Remove(jwtDescriptor);
         }
 
         services
@@ -64,5 +67,22 @@ public class FunctionalTestFactory : WebApplicationFactory<Program>
             });
 
         services.AddAuthorization();
+    }
+
+    private static void FakeInfrastructureServices(IServiceCollection services)
+    {
+        var descriptorsToRemove = services
+            .Where(s => s.ServiceType == typeof(AppDbContext) ||
+                        s.ServiceType == typeof(DbContextOptions<AppDbContext>) ||
+                        s.ServiceType.FullName!.Contains("EntityFrameworkCore"))
+            .ToList();
+
+        foreach (var descriptor in descriptorsToRemove)
+        {
+            services.Remove(descriptor);
+        }
+
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseInMemoryDatabase("FunctionalTest"));
     }
 }
