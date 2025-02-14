@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.AddLoggerConfigs();
 
 builder.Services.AddControllersConfigs();
+builder.Services.AddHttpClient();
 builder.Services.AddAuthenticationConfigs(builder.Configuration);
 builder.Services.AddAuthorizationConfigs();
 builder.Services.AddSwaggerConfigs();
