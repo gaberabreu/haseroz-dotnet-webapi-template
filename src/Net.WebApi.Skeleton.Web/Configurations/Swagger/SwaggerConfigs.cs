@@ -9,9 +9,9 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Swagger;
 
-internal static class SwaggerConfigs
+public static class SwaggerConfigs
 {
-    internal static IServiceCollection AddSwaggerConfigs(this IServiceCollection services)
+    public static IServiceCollection AddSwaggerConfigs(this IServiceCollection services)
     {
         return services
             .AddSwaggerGen(options =>
@@ -23,7 +23,7 @@ internal static class SwaggerConfigs
             .AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureKeycloakAuthentication>();
     }
 
-    internal static IApplicationBuilder UseSwaggerConfigs(this IApplicationBuilder app)
+    public static IApplicationBuilder UseSwaggerConfigs(this IApplicationBuilder app)
     {
         var provider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
         var keycloakConfigs = app.ApplicationServices.GetRequiredService<IOptions<KeycloakSettings>>();

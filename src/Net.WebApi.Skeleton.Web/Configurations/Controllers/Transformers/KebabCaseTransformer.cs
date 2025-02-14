@@ -2,7 +2,7 @@
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Transformers;
 
-internal partial class KebabCaseTransformer : IOutboundParameterTransformer
+public partial class KebabCaseTransformer : IOutboundParameterTransformer
 {
     private static readonly Regex KebabRegex = KebabCaseRegex();
 

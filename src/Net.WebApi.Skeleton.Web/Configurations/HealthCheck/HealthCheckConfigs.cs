@@ -8,7 +8,7 @@ using Net.WebApi.Skeleton.Web.Models.HealthCheck;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.HealthCheck;
 
-internal static class HealthCheckConfigs
+public static class HealthCheckConfigs
 {
     private static readonly JsonSerializerOptions DefaultJsonOptions = new()
     {
@@ -17,7 +17,7 @@ internal static class HealthCheckConfigs
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
     };
 
-    internal static IServiceCollection AddHealthCheckConfigs(this IServiceCollection services)
+    public static IServiceCollection AddHealthCheckConfigs(this IServiceCollection services)
     {
         services.AddHealthChecks()
             .AddCheck<KeycloakCheck>("keycloak");
@@ -25,7 +25,7 @@ internal static class HealthCheckConfigs
         return services;
     }
 
-    internal static IApplicationBuilder UseHealthCheckConfigs(this IApplicationBuilder app)
+    public static IApplicationBuilder UseHealthCheckConfigs(this IApplicationBuilder app)
     {
         return app
             .UseHealthChecks("/api/v1/health/liveness", new HealthCheckOptions

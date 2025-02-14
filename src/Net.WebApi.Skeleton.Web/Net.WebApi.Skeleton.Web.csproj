@@ -28,7 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Net.WebApi.Skeleton.UnitTests" />
+		<publicsVisibleTo Include="Net.WebApi.Skeleton.UnitTests" />
 	</ItemGroup>
 
 </Project>

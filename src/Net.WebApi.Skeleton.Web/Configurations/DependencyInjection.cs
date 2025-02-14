@@ -1,8 +1,8 @@
 ﻿namespace Net.WebApi.Skeleton.Web.Configurations;
 
-internal static class DependencyInjection
+public static class DependencyInjection
 {
-    internal static IServiceCollection AddDependencyInjection(this IServiceCollection services)
+    public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
     {
         return services;
     }

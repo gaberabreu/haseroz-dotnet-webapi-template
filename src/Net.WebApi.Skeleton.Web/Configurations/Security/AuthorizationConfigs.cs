@@ -1,8 +1,8 @@
 ﻿namespace Net.WebApi.Skeleton.Web.Configurations.Security;
 
-internal static class AuthorizationConfigs
+public static class AuthorizationConfigs
 {
-    internal static IServiceCollection AddAuthorizationConfigs(this IServiceCollection services)
+    public static IServiceCollection AddAuthorizationConfigs(this IServiceCollection services)
     {
         return services.AddAuthorization();
     }

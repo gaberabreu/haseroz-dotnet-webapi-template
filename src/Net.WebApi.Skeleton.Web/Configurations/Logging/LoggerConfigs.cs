@@ -5,9 +5,9 @@ using Serilog.Exceptions.EntityFrameworkCore.Destructurers;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Logging;
 
-internal static class LoggerConfigs
+public static class LoggerConfigs
 {
-    internal static IHostBuilder AddLoggerConfigs(this IHostBuilder host)
+    public static IHostBuilder AddLoggerConfigs(this IHostBuilder host)
     {
         return host.UseSerilog((context, serviceProvider, loggerConfig) =>
         {
@@ -19,7 +19,7 @@ internal static class LoggerConfigs
         });
     }
 
-    internal static IApplicationBuilder UseLoggerConfigs(this IApplicationBuilder app)
+    public static IApplicationBuilder UseLoggerConfigs(this IApplicationBuilder app)
     {
         return app.UseSerilogRequestLogging(options =>
         {

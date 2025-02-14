@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Swagger.Options;
 
-internal class ConfigureKeycloakAuthentication(IOptions<KeycloakSettings> keycloakConfig) : IConfigureOptions<SwaggerGenOptions>
+public class ConfigureKeycloakAuthentication(IOptions<KeycloakSettings> keycloakConfig) : IConfigureOptions<SwaggerGenOptions>
 {
     private const string SecurityDefinition = "Keycloak";
 

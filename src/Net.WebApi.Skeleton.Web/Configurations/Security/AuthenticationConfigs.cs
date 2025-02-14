@@ -3,9 +3,9 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Security;
 
-internal static class AuthenticationConfigs
+public static class AuthenticationConfigs
 {
-    internal static IServiceCollection AddAuthenticationConfigs(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddAuthenticationConfigs(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<KeycloakSettings>(configuration.GetSection(KeycloakSettings.Identifier));
         var config = configuration.GetSection(KeycloakSettings.Identifier).Get<KeycloakSettings>()!;

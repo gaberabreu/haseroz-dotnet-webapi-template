@@ -4,9 +4,9 @@ using Net.WebApi.Skeleton.Web.Configurations.Transformers;
 
 namespace Net.WebApi.Skeleton.Web.Configurations.Controllers;
 
-internal static class ControllersConfigs
+public static class ControllersConfigs
 {
-    internal static IServiceCollection AddControllersConfigs(this IServiceCollection services)
+    public static IServiceCollection AddControllersConfigs(this IServiceCollection services)
     {
         services.AddControllers(options =>
         {
